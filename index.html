@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <title>Stavy-Tech | Business Registration & Digital Services</title> -->
+  <title>Stavy-Tech | Digital Solutions</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function(){
+  emailjs.init("YOUR_PUBLIC_KEY");
+})();
+</script>
+
+<script>
+document.querySelector(".subscribe-form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+    user_email: this.querySelector("input").value
+  }).then(() => {
+      alert("Subscribed successfully!");
+      this.reset();
+  }, () => {
+      alert("Something went wrong. Try again.");
+  });
+});
+</script>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+
+  <div id="preloader">
+  <div class="loader"></div>
+</div>
+
+<header class="navbar">
+  <div class="logo">
+    <img src="img/file_000000003fe87243ac2c24f55b347c5e.png" style="width: 100px; height: 100px;" alt="Stavy-Tech Logo">
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="blog.html">Blog</a>
+    <a href="booking.html" class="btn-primary">Book a Session</a>
+    <button id="themeToggle"><i class="fas fa-moon"></i></button>
+  </nav>
+</header>
+
+
+<section class="hero">
+  <div class="hero-carousel">
+
+    <!-- SLIDE 1 -->
+    <div class="hero-slide active" 
+         style="background-image: linear-gradient(rgba(15,23,42,0.75), rgba(15,23,42,0.75)), 
+         url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1600&auto=format&fit=crop');">
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Professional Websites That Convert</h1>
+          <p>
+            We design modern, mobile-friendly websites that build trust,
+            attract customers, and turn visitors into paying clients.
+          </p>
+          <div class="hero-buttons">
+            <a href="booking.html" class="btn-primary">Book a Free Session</a>
+            <a href="https://wa.me/2348147599784" class="btn-outline">Chat on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="hero-slide"
+         style="background-image: linear-gradient(rgba(15,23,42,0.75), rgba(15,23,42,0.75)), 
+         url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80');">
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Fast & Reliable CAC Registration</h1>
+          <p>
+            Register your business name, company, or NGO with CAC
+            quickly and correctly—no stress, no delays.
+          </p>
+          <div class="hero-buttons">
+            <a href="booking.html" class="btn-primary">Book a Free Session</a>
+            <a href="https://wa.me/2348147599784" class="btn-outline">Chat on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="hero-slide"
+         style="background-image: linear-gradient(rgba(15,23,42,0.75), rgba(15,23,42,0.75)), 
+         url('https://media.istockphoto.com/id/1207858191/photo/official-passport-of-nigeria-on-the-top-of-a-satin-nigerian-flag-the-republic-of-nigeria.jpg?s=612x612&w=1600');">
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>International Passport Processing</h1>
+          <p>
+            Get professional guidance and support for your Nigerian
+            international passport application from start to finish.
+          </p>
+          <div class="hero-buttons">
+            <a href="booking.html" class="btn-primary">Book a Free Session</a>
+            <a href="https://wa.me/2348147599784" class="btn-outline">Chat on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4 -->
+    <div class="hero-slide"
+         style="background-image: linear-gradient(rgba(15,23,42,0.75), rgba(15,23,42,0.75)), 
+         url('https://images.unsplash.com/photo-1581093588401-22a9b03b2d42?auto=format&fit=crop&w=1600&q=80');">
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>NIN Registration & Corrections</h1>
+          <p>
+            We help you with new NIN registration, corrections,
+            and updates—fast, accurate, and reliable.
+          </p>
+          <div class="hero-buttons">
+            <a href="booking.html" class="btn-primary">Book a Free Session</a>
+            <a href="https://wa.me/2348147599784" class="btn-outline">Chat on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hero-dots">
+    <span class="dot active" data-slide="0"></span>
+    <span class="dot" data-slide="1"></span>
+    <span class="dot" data-slide="2"></span>
+    <span class="dot" data-slide="3"></span>
+  </div>
+</section>
+
+
+<!-- service section -->
+<section class="services">
+  <h2>Our Professional Services</h2>
+  <p class="subtitle">
+    Everything you need to register, structure, and grow your business —
+    all in one place.
+  </p>
+
+  <div class="service-grid">
+
+    <div class="service-card">
+      <i class="fa fa-briefcase"></i>
+      <h3>CAC Business Registration</h3>
+      <p>
+        We handle Business Name, Limited Liability Company, and NGO
+        registrations with CAC — fast, accurate, and compliant.
+      </p>
+      <a href="booking.html">Get Started →</a>
+    </div>
+
+    <div class="service-card">
+      <i class="fa fa-globe"></i>
+      <h3>Website Design & Development</h3>
+      <p>
+        Modern, mobile-friendly websites designed to build trust,
+        attract customers, and convert visitors into paying clients.
+      </p>
+      <a href="booking.html">Build My Website →</a>
+    </div>
+
+    <div class="service-card">
+      <i class="fa fa-id-card"></i>
+      <h3>NIN Services</h3>
+      <p>
+        New NIN registration, corrections, and updates done quickly
+        with proper documentation.
+      </p>
+      <a href="booking.html">Process NIN →</a>
+    </div>
+
+    <div class="service-card">
+      <i class="fa fa-passport"></i>
+      <h3>International Passport</h3>
+      <p>
+        Step-by-step guidance and processing support for Nigerian
+        International Passport applications.
+      </p>
+      <a href="booking.html">Apply Now →</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- WHY CHOOSE US -->
+<section class="why-choose-premium">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>Why Choose Stavy-Tech</h2>
+      <p>Your trusted partner for digital growth and business compliance.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="icon-box">⚡</div>
+        <h3>Fast Turnaround</h3>
+        <p>We process CAC, NIN and Passport applications efficiently without unnecessary delays.</p>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="icon-box">🛡️</div>
+        <h3>Secure & Reliable</h3>
+        <p>Your data and business information are handled with professionalism and confidentiality.</p>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="icon-box">💼</div>
+        <h3>Business Expertise</h3>
+        <p>We understand Nigerian business structure and help you avoid costly mistakes.</p>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="icon-box">🌍</div>
+        <h3>Digital Growth</h3>
+        <p>From registration to website development, we help your brand grow online.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end -->
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-premium">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>What Our Clients Say</h2>
+      <p>Real feedback from real entrepreneurs.</p>
+    </div>
+
+    <div class="testimonial-slider">
+
+      <div class="testimonial-card active">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+        <div class="stars">★★★★★</div>
+        <p>
+          Stavy-Tech handled my CAC registration professionally.
+          Smooth process and excellent communication.
+        </p>
+        <h4>Chinedu A.</h4>
+        <span>Business Owner</span>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+        <div class="stars">★★★★★</div>
+        <p>
+          My website now looks clean and credible.
+          I’ve gotten more inquiries since launch.
+        </p>
+        <h4>Sarah M.</h4>
+        <span>Entrepreneur</span>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="https://randomuser.me/api/portraits/men/56.jpg" alt="">
+        <div class="stars">★★★★★</div>
+        <p>
+          Their passport guidance saved me from costly errors.
+          Highly recommended.
+        </p>
+        <h4>Tunde O.</h4>
+        <span>Consultant</span>
+      </div>
+
+    </div>
+
+    <div class="testimonial-dots">
+      <span class="t-dot active" data-slide="0"></span>
+      <span class="t-dot" data-slide="1"></span>
+      <span class="t-dot" data-slide="2"></span>
+    </div>
+
+  </div>
+</section>
+
+<!-- stat -->
+<section class="stats-section">
+  <div class="stats-overlay"></div>
+
+  <div class="stats-container">
+
+    <div class="stat-box">
+      <div class="stat-icon">
+        <i class="fas fa-briefcase"></i>
+      </div>
+      <h2 class="counter" data-target="500">0</h2>
+      <p>Businesses Registered</p>
+    </div>
+
+    <div class="stat-box">
+      <div class="stat-icon">
+        <i class="fas fa-passport"></i>
+      </div>
+      <h2 class="counter" data-target="300">0</h2>
+      <p>Passports Processed</p>
+    </div>
+
+    <div class="stat-box">
+      <div class="stat-icon">
+        <i class="fas fa-id-card"></i>
+      </div>
+      <h2 class="counter" data-target="250">0</h2>
+      <p>NIN Services Completed</p>
+    </div>
+
+    <div class="stat-box">
+      <div class="stat-icon">
+        <i class="fas fa-laptop-code"></i>
+      </div>
+      <h2 class="counter" data-target="120">0</h2>
+      <p>Websites Delivered</p>
+    </div>
+
+  </div>
+</section>
+<!-- online booking -->
+<section class="booking">
+  <div class="booking-content">
+    <!-- Left Column: Form -->
+    <div class="booking-form">
+      <h2>Book a Free Consultation</h2>
+      <p>
+        Tell us what you need and schedule a session. We’ll handle the rest.
+      </p>
+
+      <form id="bookingForm">
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <input type="tel" placeholder="Phone Number" required />
+
+        <select required>
+          <option value="">Select Service</option>
+          <option>CAC Registration</option>
+          <option>Website Development</option>
+          <option>NIN Services</option>
+          <option>International Passport</option>
+        </select>
+
+        <input type="date" required />
+        <input type="time" required />
+
+        <button type="submit" class="btn-primary">
+          Book Session
+        </button>
+      </form>
+    </div>
+
+    <!-- Right Column: Image -->
+    <div class="booking-image">
+      <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72" alt="Booking Consultation Illustration">
+    </div>
+  </div>
+</section>
+<!--  -->
+<section class="trust-section">
+  <div class="container">
+    <h2>Trusted & Reliable Digital Partner</h2>
+    <p>
+      We operate with professionalism, compliance and transparency.
+      Your business is safe with us.
+    </p>
+
+    <div class="trust-badges">
+      <div class="badge">✔ CAC Compliance</div>
+      <div class="badge">✔ Secure Data Handling</div>
+      <div class="badge">✔ 24/7 Support</div>
+      <div class="badge">✔ 100% Client Satisfaction</div>
+    </div>
+  </div>
+</section>
+<!--  -->
+<section class="faq-section">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq">
+      <div class="faq-item">
+        <div class="faq-question">How long does CAC registration take?</div>
+        <div class="faq-answer">Usually between 3–7 working days depending on approval.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Do you build custom websites?</div>
+        <div class="faq-answer">Yes, we build modern responsive websites tailored to your brand.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Do you assist with passport processing?</div>
+        <div class="faq-answer">Yes, we guide you through every step professionally.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- footer -->
+<footer class="premium-footer">
+  <section class="footer-cta">
+  <div class="cta-content">
+    <h2>Ready to Register or Grow Your Business?</h2>
+    <p>Let’s help you structure and scale professionally.</p>
+    <a href="booking.html" class="cta-btn">Book a Free Consultation</a>
+  </div>
+</section>
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <h3>Stavy-Tech</h3>
+        <p>
+          Your trusted partner for business registration,
+          compliance and digital growth solutions.
+        </p>
+
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Services Column -->
+      <div>
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="#">CAC Registration</a></li>
+          <li><a href="#">NIN Services</a></li>
+          <li><a href="#">International Passport</a></li>
+          <li><a href="#">Website Development</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Column -->
+      <div>
+        <h4>Contact</h4>
+        <p>📞 08147599784</p>
+        <p>📧 info@stavytech.com</p>
+        <p>📍 Nigeria</p>
+      </div>
+
+      <!-- Newsletter Column -->
+      <div>
+        <h4>Subscribe to Our Newsletter</h4>
+        <p>Get updates, business tips & service alerts.</p>
+
+        <form class="subscribe-form">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Stavy-Tech. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp AI Lead Chat -->
+<div class="wa-chatbot">
+
+  <div class="wa-header">
+    <div class="wa-avatar">
+      <i class="fab fa-whatsapp"></i>
+    </div>
+    <div>
+      <h4>Stavy-Tech Support</h4>
+      <span>AI Assistant • Online</span>
+    </div>
+    <div class="wa-close">
+      <i class="fa fa-times"></i>
+    </div>
+  </div>
+
+  <div class="wa-body">
+
+    <div class="wa-message" id="wa-message"></div>
+
+    <div class="wa-typing" id="wa-typing">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="wa-form" id="wa-form">
+
+      <input type="text" id="wa-name" placeholder="Your Name" required>
+      <input type="email" id="wa-email" placeholder="Your Email" required>
+
+      <select id="wa-service">
+        <option value="">Select Service</option>
+        <option value="CAC Registration">CAC Registration</option>
+        <option value="NIN Services">NIN Services</option>
+        <option value="International Passport">International Passport</option>
+        <option value="Website Development">Website Development</option>
+      </select>
+
+      <button id="wa-submit">Start Chat</button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="wa-toggle">
+  <i class="fab fa-whatsapp"></i>
+</div>
+<script src="main.js"></script>
+
+<script>
+const waToggle = document.querySelector(".wa-toggle");
+const waChat = document.querySelector(".wa-chatbot");
+const waClose = document.querySelector(".wa-close");
+const waSubmit = document.getElementById("wa-submit");
+const waMessage = document.getElementById("wa-message");
+const waTyping = document.getElementById("wa-typing");
+
+waToggle.onclick = () => {
+  waChat.style.display = "flex";
+  showGreeting();
+};
+
+waClose.onclick = () => {
+  waChat.style.display = "none";
+};
+
+function getGreeting() {
+  let hour = new Date().getHours();
+  if (hour < 12) return "Good morning";
+  if (hour < 18) return "Good afternoon";
+  return "Good evening";
+}
+
+function showGreeting() {
+  waTyping.style.display = "block";
+  setTimeout(() => {
+    waTyping.style.display = "none";
+    waMessage.innerHTML = `👋 ${getGreeting()}! Please provide your details to continue.`;
+  }, 1000);
+}
+
+waSubmit.onclick = () => {
+
+  const name = document.getElementById("wa-name").value.trim();
+  const email = document.getElementById("wa-email").value.trim();
+  const service = document.getElementById("wa-service").value;
+
+  if (!name || !email || !service) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  const lead = {
+    name,
+    email,
+    service,
+    date: new Date().toLocaleString()
+  };
+
+  // Save locally (Demo CRM)
+  let leads = JSON.parse(localStorage.getItem("stavyLeads")) || [];
+  leads.push(lead);
+  localStorage.setItem("stavyLeads", JSON.stringify(leads));
+
+  // WhatsApp Redirect
+  const phone = "2348147599784";
+  const message = `Hello, my name is ${name}. I am interested in ${service}. My email is ${email}.`;
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+  window.open(url, "_blank");
+};
+</script>
+
+
+<script>
+const cards = document.querySelectorAll(".testimonial-card");
+const dots = document.querySelectorAll(".t-dot");
+let index = 0;
+
+function showSlide(i) {
+  cards.forEach(c => c.classList.remove("active"));
+  dots.forEach(d => d.classList.remove("active"));
+  cards[i].classList.add("active");
+  dots[i].classList.add("active");
+  index = i;
+}
+
+dots.forEach(dot => {
+  dot.addEventListener("click", () => {
+    showSlide(parseInt(dot.dataset.slide));
+  });
+});
+
+setInterval(() => {
+  let next = (index + 1) % cards.length;
+  showSlide(next);
+}, 5000);
+</script>
+
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+  const trigger = window.innerHeight * 0.85;
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < trigger) {
+      el.classList.add("active");
+    }
+  });
+});
+</script>
+
+<!-- js coun -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const counters = document.querySelectorAll(".counter");
+  let started = false;
+
+  const startCounter = () => {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute("data-target");
+      const duration = 2000; // total animation time (2s)
+      const incrementTime = 20;
+      const steps = duration / incrementTime;
+      const increment = target / steps;
+
+      let current = 0;
+
+      const update = () => {
+        current += increment;
+        if (current < target) {
+          counter.innerText = Math.ceil(current);
+          setTimeout(update, incrementTime);
+        } else {
+          counter.innerText = target + "+";
+        }
+      };
+
+      update();
+    });
+  };
+
+  // Intersection Observer (triggers only when visible)
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting && !started) {
+      startCounter();
+      started = true;
+    }
+  }, { threshold: 0.4 });
+
+  observer.observe(document.querySelector(".stats-section"));
+
+});
+</script>
+
+<!--  -->
+
+<script>
+document.querySelectorAll(".faq-item").forEach(item => {
+  item.addEventListener("click", () => {
+    const answer = item.querySelector(".faq-answer");
+    answer.style.display =
+      answer.style.display === "block" ? "none" : "block";
+  });
+});
+</script>
+
+<!--page loader -->
+<script>
+window.addEventListener("load", function(){
+  document.getElementById("preloader").style.display = "none";
+});
+</script>
+
+<script>
+window.addEventListener("scroll", function(){
+  const header = document.querySelector("header");
+  if(window.scrollY > 50){
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+</script>
+
+<script>
+const toggleBtn = document.getElementById("themeToggle");
+
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("light-mode");
+});
+</script>
+
+<!-- seo  replace domain-->
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Stavy-Tech",
+  "url": "https://yourdomain.com",
+  "logo": "https://yourdomain.com/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+2348147599784",
+    "contactType": "customer service"
+  }
+}
+</script>
+
+
+<!-- <script>
+const waToggle = document.querySelector(".wa-toggle");
+const waChat = document.querySelector(".wa-chatbot");
+const waClose = document.querySelector(".wa-close");
+const waGreeting = document.getElementById("wa-greeting");
+const waTyping = document.getElementById("wa-typing");
+const waNameBox = document.getElementById("wa-name-box");
+const waOptions = document.getElementById("wa-options");
+const waSaveName = document.getElementById("wa-save-name");
+const waNameInput = document.getElementById("wa-name");
+const waButtons = document.querySelectorAll(".wa-options button");
+const waSound = document.getElementById("wa-sound");
+
+let userName = localStorage.getItem("waUserName");
+
+function getGreeting() {
+  let hour = new Date().getHours();
+  if (hour < 12) return "Good morning";
+  if (hour < 18) return "Good afternoon";
+  return "Good evening";
+}
+
+function startChat() {
+  waTyping.style.display = "block";
+  setTimeout(() => {
+    waTyping.style.display = "none";
+    waGreeting.innerHTML = `👋 ${getGreeting()}${userName ? " " + userName : ""}! Welcome to Stavy-Tech. How can we help you today?`;
+    if (userName) {
+      waNameBox.style.display = "none";
+      waOptions.style.display = "block";
+    }
+  }, 1200);
+}
+
+waToggle.onclick = () => {
+  waChat.style.display = "flex";
+  waSound.play();
+  localStorage.setItem("waChatOpen", "true");
+  startChat();
+};
+
+waClose.onclick = () => {
+  waChat.style.display = "none";
+  localStorage.setItem("waChatOpen", "false");
+};
+
+waSaveName.onclick = () => {
+  userName = waNameInput.value.trim();
+  if (!userName) return;
+  localStorage.setItem("waUserName", userName);
+  waNameBox.style.display = "none";
+  waOptions.style.display = "block";
+  waGreeting.innerHTML = `👋 ${getGreeting()} ${userName}! How can we help you today?`;
+};
+
+waButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    let message = `Hello, my name is ${userName || ""}. ${btn.getAttribute("data-message")}`;
+    let phone = "234XXXXXXXXXX";
+    let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  });
+});
+
+// Restore open state
+if (localStorage.getItem("waChatOpen") === "true") {
+  waChat.style.display = "flex";
+  startChat();
+}
+</script> 
+
+<!-- <script>
+const waToggle = document.querySelector(".wa-toggle");
+const waChat = document.querySelector(".wa-chatbot");
+const waClose = document.querySelector(".wa-close");
+const waButtons = document.querySelectorAll(".wa-options button");
+
+waToggle.onclick = () => {
+  waChat.style.display = "flex";
+};
+
+waClose.onclick = () => {
+  waChat.style.display = "none";
+};
+
+waButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    let message = btn.getAttribute("data-message");
+    let phone = "234XXXXXXXXXX"; // Replace with your number
+    let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  });
+});
+</script> -->
+
+<button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+</body>
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stavy-Tech | Digital Solutions</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+--primary:#0A192F;
+--secondary:skyblue;
+/* --secondary:#D4AF37; */
+--gray:#f4f6fa;
+--white:#ffffff;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:var(--gray);color:#333;}
+section{padding:80px 8%;}
+
+/* NAVBAR */
+nav{
+background:var(--primary);
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:white;
+position:fixed;
+width:100%;
+z-index:1000;
+}
+
+nav h2{color:var(--secondary);}
+
+nav ul{
+list-style:none;
+display:flex;
+align-items:center;
+gap:25px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+
+nav a:hover{color:var(--secondary);}
+
+.nav-btn{
+background:var(--secondary);
+padding:10px 20px;
+border-radius:25px;
+color:black;
+font-weight:600;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+position:relative;
+overflow:hidden;
+/* margin-top:70px; */
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+padding:0 8%;
+opacity:0;
+transition:opacity 1s ease-in-out;
+}
+
+.slide.active{opacity:1;}
+
+.overlay{
+background:rgba(7, 7, 7, 0);
+position:absolute;
+width:100%;
+height:100%;
+}
+
+.hero-content{
+position:relative;
+max-width:600px;
+color:white;
+z-index:2;
+}
+
+.hero h1{font-size:45px;margin-bottom:20px;}
+.hero p{margin-bottom:20px;}
+
+.btn{
+display:inline-block;
+padding:12px 28px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn-primary{
+background:var(--secondary);
+color:black;
+}
+
+.btn-primary:hover{background:white;}
+
+.controls{
+position:absolute;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:10px;
+z-index:3;
+}
+
+.dot{
+height:12px;width:12px;border-radius:50%;
+background:white;opacity:0.5;cursor:pointer;
+}
+
+.dot.active{opacity:1;background:var(--secondary);}
+
+.arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:30px;color:white;cursor:pointer;z-index:3;
+}
+
+.arrow.left{left:20px;}
+.arrow.right{right:20px;}
+
+/* SERVICES */
+.section-title{text-align:center;margin-bottom:50px;font-size:32px;color:var(--primary);}
+
+.services .subtitle {
+  text-align: center;
+  color: var(--gray);
+  max-width: 650px;
+  margin: 10px auto 60px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px, 1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:14px;
+box-shadow:0 8px 25px rgba(0,0,0,0.05);
+text-align:center;
+/* font-size: 1.; */
+transition:0.3s;
+}
+
+.card:hover{transform:translateY(-10px);}
+
+.card i{
+font-size:40px;
+color:var(--secondary);
+margin-bottom:15px;
+}
+
+.apply-btn{
+display:inline-block;
+margin-top:15px;
+color:skyblue;
+font-weight:600;
+text-decoration:none;
+}
+
+/* .apply-btn i{margin-left:5px;color:var(--secondary);} */
+
+/* CONTACT */
+.contact-wrapper{
+display:flex;
+gap:40px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.contact-form{
+flex:1;
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 8px 25px rgba(0,0,0,0.05);
+}
+
+.contact-form input,
+.contact-form select{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:8px;
+}
+
+.contact-image{
+flex:1;
+}
+
+.contact-image img{
+width:100%;
+border-radius:12px;
+}
+
+/* FOOTER */
+footer{
+background:var(--primary);
+color:white;
+padding:50px 8%;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+}
+
+footer h4{color:var(--secondary);margin-bottom:15px;}
+
+footer a{
+color:white;
+text-decoration:none;
+display:block;
+margin-bottom:10px;
+}
+
+.social i{
+margin-right:10px;
+font-size:18px;
+}
+
+.copyright{
+text-align:center;
+margin-top:40px;
+border-top:1px solid rgba(255,255,255,0.2);
+padding-top:20px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+.hero h1{font-size:30px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<img src="img/logo.png" style="width: 90px; background-color: skyblue;" alt="">
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#contact" class="nav-btn">Book a Session</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+
+<div class="slide active" style="background:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f');">
+<div class="overlay"></div>
+<div class="hero-content">
+<h1>CAC Registration Made Easy</h1>
+<p>Register your business name or company quickly and professionally.</p>
+<a href="#contact" class="btn btn-primary">Apply Now </a>
+</div>
+</div>
+
+<div class="slide" style="background:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f');">
+<div class="overlay"></div>
+<div class="hero-content">
+<h1>NIN Enrollment & Corrections</h1>
+<p>Fast and reliable NIN processing assistance.</p>
+<a href="#contact" class="btn btn-primary">Apply Now</a>
+</div>
+</div>
+
+<div class="slide" style="background:url('https://images.unsplash.com/photo-1502920917128-1aa500764b06');">
+<div class="overlay"></div>
+<div class="hero-content">
+<h1>International Passport Assistance</h1>
+<p>New applications and renewals made simple.</p>
+<a href="#contact" class="btn btn-primary">Apply Now</a>
+</div>
+</div>
+
+<div class="slide" style="background:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085');">
+<div class="overlay"></div>
+<div class="hero-content">
+<h1>Professional Website Development</h1>
+<p>Build a strong digital presence for your business.</p>
+<a href="#contact" class="btn btn-primary">Apply Now</a>
+</div>
+</div>
+
+<div class="arrow left"><i class="fa fa-chevron-left"></i></div>
+<div class="arrow right"><i class="fa fa-chevron-right"></i></div>
+<div class="controls"></div>
+
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+<h2 class="section-title">Our Professional Services</h2>
+ <p class="subtitle" style=" text-align: center;
+  color: var(--black);
+  max-width: 650px;
+  margin: 10px auto 60px;">
+    Everything you need to register, structure, and grow your business —
+    all in one place.
+  </p>
+<div class="grid">
+<div class="card">
+<i class="fa fa-briefcase"></i>
+ <h3>CAC Business Registration</h3>
+      <p>
+        We handle Business Name, Limited Liability Company, and NGO
+        registrations with CAC — fast, accurate, and compliant.
+      </p>
+<a href="#contact" class="apply-btn" >Apply Now  →</a>
+</div>
+
+<div class="card">
+<i class="fa fa-id-card"></i>
+ <h3>NIN Services</h3>
+      <p>
+        New NIN registration, corrections, and updates done quickly
+        with proper documentation.
+      </p>
+<a href="#contact" class="apply-btn">Apply Now  →</a>
+</div>
+
+<div class="card">
+<i class="fa fa-passport"></i>
+ <h3>International Passport</h3>
+      <p>
+        Step-by-step guidance and processing support for Nigerian
+        International Passport applications.
+      </p>
+<a href="#contact" class="apply-btn">Apply Now  →</a>
+</div>
+
+<div class="card">
+<i class="fa fa-globe"></i>
+<h3>Website Design & Development</h3>
+      <p>
+        Modern, mobile-friendly websites designed to build trust,
+        attract customers, and convert visitors into paying clients.
+      </p>
+<a href="#contact" class="apply-btn"> Apply Now  → </a>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2 class="section-title">Book a Session</h2>
+
+<div class="contact-wrapper">
+<div class="contact-form">
+<form>
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email Address" required>
+<input type="tel" placeholder="Phone Number" required>
+
+<select required>
+<option value="">Select Required Service</option>
+<option>CAC Registration</option>
+<option>Website Development</option>
+<option>NIN Services</option>
+<option>International Passport</option>
+</select>
+
+<input type="date" required>
+<input type="time" required>
+
+<button type="submit" class="btn btn-primary">Book a Session</button>
+</form>
+</div>
+
+<div class="contact-image">
+<img src="https://images.unsplash.com/photo-1556761175-b413da4baf72" alt="">
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-grid">
+
+<div>
+<img src="img/logo.png" style="background-color:skyblue; width: 130px;" alt="">
+
+<p>Your trusted digital solutions partner in Nigeria.</p>
+</div>
+
+<div>
+<h4>Quick Links</h4>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#services">Services</a>
+<a href="#">Blog</a>
+</div>
+
+<div>
+<h4>Contact Us</h4>
+<p>Email: info@stavytech.com</p>
+<p>Phone: +234XXXXXXXXXX</p>
+</div>
+
+<div>
+<h4>Follow Us</h4>
+<div class="social">
+<i class="fab fa-facebook"></i>
+<i class="fab fa-instagram"></i>
+<i class="fab fa-linkedin"></i>
+</div>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 Stavy-Tech. All Rights Reserved.
+</div>
+</footer>
+
+<script>
+const slides=document.querySelectorAll(".slide");
+const dotsContainer=document.querySelector(".controls");
+let current=0;
+
+slides.forEach((_,i)=>{
+const dot=document.createElement("div");
+dot.classList.add("dot");
+if(i===0) dot.classList.add("active");
+dot.addEventListener("click",()=>showSlide(i));
+dotsContainer.appendChild(dot);
+});
+
+const dots=document.querySelectorAll(".dot");
+
+function showSlide(index){
+slides[current].classList.remove("active");
+dots[current].classList.remove("active");
+current=index;
+slides[current].classList.add("active");
+dots[current].classList.add("active");
+}
+
+function nextSlide(){showSlide((current+1)%slides.length);}
+function prevSlide(){showSlide((current-1+slides.length)%slides.length);}
+
+document.querySelector(".arrow.right").onclick=nextSlide;
+document.querySelector(".arrow.left").onclick=prevSlide;
+
+setInterval(nextSlide,5000);
+</script>
+
+</body>
+</html>
