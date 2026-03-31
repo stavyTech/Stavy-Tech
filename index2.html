@@ -89,58 +89,92 @@ width:100%;
 height:100%;
 }
 
-.hero-content{
-position:relative;
-max-width:600px;
-color:white;
-z-index:2;
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero-slide {
+  display: none;
+  width: 100%;
+  position: relative;
+}
+.hero-slide.active {
+  display: block;
+  animation: fadeIn 1s ease;
+}
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 70px;
+  min-height: 80vh;
+  gap: 30px;
+}
+.hero-text {
+  max-width: 600px;
+  color: #f8fafc;
+  animation: slideLeft 1s ease;
+}
+.hero-text h1 { font-size: 3rem; line-height: 1.2; }
+.hero-text p { margin: 20px 0 30px; font-size: 1.1rem; color: #cbd5f5; }
+.hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+.btn-primary {
+  background: #38bdf8;
+  color: #000;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.btn-primary:hover { transform: scale(1.05); }
+.btn-outline {
+  border: 2px solid #38bdf8;
+  color: #38bdf8;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.btn-outline:hover { background: #38bdf8; color: #000; transform: scale(1.05); }
+.hero-image { max-width: 45%; animation: slideRight 1s ease; }
+.hero-image img { width: 100%; height: auto; border-radius: 8px; }
+
+/* DOTS */
+.hero-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 5;
+}
+.dot { width: 12px; height: 12px; background: #94a3b8; border-radius: 50%; cursor: pointer; transition: 0.3s; }
+.dot.active { background: #38bdf8; }
+
+/* ANIMATIONS */
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+@keyframes slideLeft { from {opacity:0; transform:translateX(-30px);} to {opacity:1; transform:translateX(0);} }
+@keyframes slideRight { from {opacity:0; transform:translateX(30px);} to {opacity:1; transform:translateX(0);} }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-content { flex-direction: column; justify-content: center; text-align: center; padding: 0 20px; }
+  .hero-image { max-width: 100%; margin-top: 20px; }
+  .hero-text h1 { font-size: 1.8rem; }
+  .hero-text p { font-size: 0.95rem; margin-bottom: 15px; }
+  .hero-buttons { flex-direction: column; gap: 10px; margin-top: 5px; }
+  .hero-dots { bottom: 10px; }
+}
+@media (max-width: 500px) {
+  .hero-slide { min-height: 55vh; }
+  .hero-text h1 { font-size: 1.5rem; }
+  .hero-text p { font-size: 0.85rem; }
+  .hero-buttons a { max-width: 240px; }
+  .hero-dots { bottom: 8px; }
 }
 
-.hero h1{font-size:45px;margin-bottom:20px;}
-.hero p{margin-bottom:20px;}
-
-.btn{
-display:inline-block;
-padding:12px 28px;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-transition:0.3s;
-}
-
-.btn-primary{
-background:var(--secondary);
-color:black;
-}
-
-.btn-primary:hover{background:white;}
-
-.controls{
-position:absolute;
-bottom:20px;
-left:50%;
-transform:translateX(-50%);
-display:flex;
-gap:10px;
-z-index:3;
-}
-
-.dot{
-height:12px;width:12px;border-radius:50%;
-background:white;opacity:0.5;cursor:pointer;
-}
-
-.dot.active{opacity:1;background:var(--secondary);}
-
-.arrow{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-font-size:30px;color:white;cursor:pointer;z-index:3;
-}
-
-.arrow.left{left:20px;}
-.arrow.right{right:20px;}
 
 /* SERVICES */
 .section-title{text-align:center;margin-bottom:50px;font-size:32px;color:var(--primary);}
@@ -274,49 +308,99 @@ padding-top:20px;
 </nav>
 
 <!-- HERO -->
-<div class="hero">
+<!-- =========================
+   PREMIUM HERO SECTION
+========================= -->
+<section class="hero">
+  <div class="hero-carousel">
 
-<div class="slide active" style="background:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f');">
-<div class="overlay"></div>
-<div class="hero-content">
-<h1>CAC Registration Made Easy</h1>
-<p>Register your business name or company quickly and professionally.</p>
-<a href="#contact" class="btn btn-primary">Apply Now </a>
-</div>
-</div>
+    <!-- SLIDE 1 -->
+    <div class="hero-slide active">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Professional Websites That Convert</h1>
+          <p>We design modern, mobile-friendly websites that build trust, attract customers, and turn visitors into paying clients.</p>
+          <div class="hero-buttons">
+            <a href="booking.html" class="btn-primary">Book a Free Session</a>
+            <a href="https://wa.me/2348147599784" class="btn-outline">Chat on WhatsApp</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=800&auto=format&fit=crop" alt="Website illustration">
+        </div>
+      </div>
+    </div>
 
-<div class="slide" style="background:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f');">
-<div class="overlay"></div>
-<div class="hero-content">
-<h1>NIN Enrollment & Corrections</h1>
-<p>Fast and reliable NIN processing assistance.</p>
-<a href="#contact" class="btn btn-primary">Apply Now</a>
-</div>
-</div>
+    <!-- SLIDE 2 -->
+    <div class="hero-slide">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Fast & Reliable CAC Registration</h1>
+          <p>Register your business name, company, or NGO with CAC quickly and correctly—no stress, no delays.</p>
+          <div class="hero-buttons">
+            <a href="booking.html" class="btn-primary">Book a Free Session</a>
+            <a href="https://wa.me/2348147599784" class="btn-outline">Chat on WhatsApp</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="CAC registration illustration">
+        </div>
+      </div>
+    </div>
 
-<div class="slide" style="background:url('https://images.unsplash.com/photo-1502920917128-1aa500764b06');">
-<div class="overlay"></div>
-<div class="hero-content">
-<h1>International Passport Assistance</h1>
-<p>New applications and renewals made simple.</p>
-<a href="#contact" class="btn btn-primary">Apply Now</a>
-</div>
-</div>
+    <!-- SLIDE 3 -->
+    <div class="hero-slide">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>International Passport Processing</h1>
+          <p>Get professional guidance and support for your Nigerian international passport application from start to finish.</p>
+          <div class="hero-buttons">
+            <a href="booking.html" class="btn-primary">Book a Free Session</a>
+            <a href="https://wa.me/2348147599784" class="btn-outline">Chat on WhatsApp</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1502920917128-1aa500764b06" alt="Passport illustration">
+        </div>
+      </div>
+    </div>
 
-<div class="slide" style="background:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085');">
-<div class="overlay"></div>
-<div class="hero-content">
-<h1>Professional Website Development</h1>
-<p>Build a strong digital presence for your business.</p>
-<a href="#contact" class="btn btn-primary">Apply Now</a>
-</div>
-</div>
+    <!-- SLIDE 4 -->
+    <div class="hero-slide">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>NIN Registration & Corrections</h1>
+          <p>We help you with new NIN registration, corrections, and updates—fast, accurate, and reliable.</p>
+          <div class="hero-buttons">
+            <a href="booking.html" class="btn-primary">Book a Free Session</a>
+            <a href="https://wa.me/2348147599784" class="btn-outline">Chat on WhatsApp</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f" alt="NIN illustration">
+        </div>
+      </div>
+    </div>
 
-<div class="arrow left"><i class="fa fa-chevron-left"></i></div>
-<div class="arrow right"><i class="fa fa-chevron-right"></i></div>
-<div class="controls"></div>
+  </div>
 
-</div>
+  <!-- DOTS -->
+  <div class="hero-dots">
+    <span class="dot active" data-slide="0"></span>
+    <span class="dot" data-slide="1"></span>
+    <span class="dot" data-slide="2"></span>
+    <span class="dot" data-slide="3"></span>
+  </div>
+</section>
+
+<!-- =========================
+   HERO CSS
+========================= -->
+
+
+<!-- =========================
+   HERO JS
+========================= -->
 
 <!-- SERVICES -->
 <section id="services">
@@ -443,7 +527,7 @@ padding-top:20px;
 </div>
 </footer>
 
-<script>
+<!-- <script>
 const slides=document.querySelectorAll(".slide");
 const dotsContainer=document.querySelector(".controls");
 let current=0;
@@ -473,7 +557,40 @@ document.querySelector(".arrow.right").onclick=nextSlide;
 document.querySelector(".arrow.left").onclick=prevSlide;
 
 setInterval(nextSlide,5000);
-</script>
+</script> -->
+<script>
+const slides = document.querySelectorAll('.hero-slide');
+const dots = document.querySelectorAll('.dot');
+let currentSlide = 0;
+let slideInterval;
 
+function goToSlide(n){
+  slides.forEach((slide,i)=>{
+    slide.classList.remove('active');
+    dots[i].classList.remove('active');
+    if(i===n){slide.classList.add('active'); dots[i].classList.add('active');}
+  });
+  currentSlide = n;
+}
+
+function nextSlide(){
+  let next = currentSlide + 1;
+  if(next >= slides.length) next = 0;
+  goToSlide(next);
+}
+
+function startSlide(){ slideInterval = setInterval(nextSlide,5000); }
+function stopSlide(){ clearInterval(slideInterval); }
+
+dots.forEach((dot,index)=>{
+  dot.addEventListener('click',()=>{ goToSlide(index); stopSlide(); startSlide(); });
+});
+
+document.querySelector('.hero-carousel').addEventListener('mouseenter', stopSlide);
+document.querySelector('.hero-carousel').addEventListener('mouseleave', startSlide);
+
+goToSlide(0);
+startSlide();
+</script>
 </body>
 </html>

@@ -39,17 +39,25 @@ document.querySelector(".subscribe-form").addEventListener("submit", function(e)
   <div class="loader"></div>
 </div>
 
-<header class="navbar">
+<header class="navbar" id="navbar">
   <div class="logo">
-    <img src="img/file_000000003fe87243ac2c24f55b347c5e.png" style="width: 100px; height: 100px;" alt="Stavy-Tech Logo">
+    <img src="img/file_000000003fe87243ac2c24f55b347c5e.png" alt="Stavy-Tech Logo">
   </div>
-  <nav>
+
+  <!-- Hamburger -->
+  <div class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav id="navMenu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
     <a href="blog.html">Blog</a>
     <a href="booking.html" class="btn-primary">Book a Session</a>
-    <button id="themeToggle"><i class="fas fa-moon"></i></button>
+    <button id="themeToggle">🌙</button>
   </nav>
 </header>
 
@@ -59,16 +67,12 @@ document.querySelector(".subscribe-form").addEventListener("submit", function(e)
 
     <!-- SLIDE 1 -->
     <div class="hero-slide active" 
-         style="background-image: linear-gradient(rgba(15,23,42,0.75), rgba(15,23,42,0.75)), 
-         url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1600&auto=format&fit=crop');">
-
+         style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1600&auto=format&fit=crop');">
+      <div class="hero-overlay"></div>
       <div class="hero-content">
         <div class="hero-text">
           <h1>Professional Websites That Convert</h1>
-          <p>
-            We design modern, mobile-friendly websites that build trust,
-            attract customers, and turn visitors into paying clients.
-          </p>
+          <p>We design modern, mobile-friendly websites that build trust, attract customers, and turn visitors into paying clients.</p>
           <div class="hero-buttons">
             <a href="booking.html" class="btn-primary">Book a Free Session</a>
             <a href="https://wa.me/2348147599784" class="btn-outline">Chat on WhatsApp</a>
@@ -79,16 +83,12 @@ document.querySelector(".subscribe-form").addEventListener("submit", function(e)
 
     <!-- SLIDE 2 -->
     <div class="hero-slide"
-         style="background-image: linear-gradient(rgba(15,23,42,0.75), rgba(15,23,42,0.75)), 
-         url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80');">
-
+         style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80');">
+      <div class="hero-overlay"></div>
       <div class="hero-content">
         <div class="hero-text">
           <h1>Fast & Reliable CAC Registration</h1>
-          <p>
-            Register your business name, company, or NGO with CAC
-            quickly and correctly—no stress, no delays.
-          </p>
+          <p>Register your business name, company, or NGO with CAC quickly and correctly—no stress, no delays.</p>
           <div class="hero-buttons">
             <a href="booking.html" class="btn-primary">Book a Free Session</a>
             <a href="https://wa.me/2348147599784" class="btn-outline">Chat on WhatsApp</a>
@@ -99,16 +99,12 @@ document.querySelector(".subscribe-form").addEventListener("submit", function(e)
 
     <!-- SLIDE 3 -->
     <div class="hero-slide"
-         style="background-image: linear-gradient(rgba(15,23,42,0.75), rgba(15,23,42,0.75)), 
-         url('https://images.unsplash.com/photo-1502920917128-1aa500764b06');">
-
+         style="background-image: url('https://images.unsplash.com/photo-1502920917128-1aa500764b06');">
+      <div class="hero-overlay"></div>
       <div class="hero-content">
         <div class="hero-text">
           <h1>International Passport Processing</h1>
-          <p>
-            Get professional guidance and support for your Nigerian
-            international passport application from start to finish.
-          </p>
+          <p>Get professional guidance and support for your Nigerian international passport application from start to finish.</p>
           <div class="hero-buttons">
             <a href="booking.html" class="btn-primary">Book a Free Session</a>
             <a href="https://wa.me/2348147599784" class="btn-outline">Chat on WhatsApp</a>
@@ -119,16 +115,12 @@ document.querySelector(".subscribe-form").addEventListener("submit", function(e)
 
     <!-- SLIDE 4 -->
     <div class="hero-slide"
-         style="background-image: linear-gradient(rgba(15,23,42,0.75), rgba(15,23,42,0.75)), 
-         url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f');">
-
+         style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f');">
+      <div class="hero-overlay"></div>
       <div class="hero-content">
         <div class="hero-text">
           <h1>NIN Registration & Corrections</h1>
-          <p>
-            We help you with new NIN registration, corrections,
-            and updates—fast, accurate, and reliable.
-          </p>
+          <p>We help you with new NIN registration, corrections, and updates—fast, accurate, and reliable.</p>
           <div class="hero-buttons">
             <a href="booking.html" class="btn-primary">Book a Free Session</a>
             <a href="https://wa.me/2348147599784" class="btn-outline">Chat on WhatsApp</a>
@@ -139,6 +131,7 @@ document.querySelector(".subscribe-form").addEventListener("submit", function(e)
 
   </div>
 
+  <!-- SLIDE DOTS -->
   <div class="hero-dots">
     <span class="dot active" data-slide="0"></span>
     <span class="dot" data-slide="1"></span>
@@ -203,33 +196,36 @@ document.querySelector(".subscribe-form").addEventListener("submit", function(e)
 
 
 <!-- WHY CHOOSE US -->
+
+
+
 <section class="why-choose-premium">
   <div class="container">
-    <div class="section-header reveal">
+    <div class="section-header">
       <h2>Why Choose Stavy-Tech</h2>
       <p>Your trusted partner for digital growth and business compliance.</p>
     </div>
 
     <div class="why-grid">
-      <div class="why-card reveal">
+      <div class="why-card">
         <div class="icon-box">⚡</div>
         <h3>Fast Turnaround</h3>
         <p>We process CAC, NIN and Passport applications efficiently without unnecessary delays.</p>
       </div>
 
-      <div class="why-card reveal">
+      <div class="why-card">
         <div class="icon-box">🛡️</div>
         <h3>Secure & Reliable</h3>
         <p>Your data and business information are handled with professionalism and confidentiality.</p>
       </div>
 
-      <div class="why-card reveal">
+      <div class="why-card">
         <div class="icon-box">💼</div>
         <h3>Business Expertise</h3>
         <p>We understand Nigerian business structure and help you avoid costly mistakes.</p>
       </div>
 
-      <div class="why-card reveal">
+      <div class="why-card">
         <div class="icon-box">🌍</div>
         <h3>Digital Growth</h3>
         <p>From registration to website development, we help your brand grow online.</p>
@@ -237,20 +233,23 @@ document.querySelector(".subscribe-form").addEventListener("submit", function(e)
     </div>
   </div>
 </section>
-
 <!-- end -->
 
-<!-- TESTIMONIALS -->
+<!-- =========================
+   TESTIMONIALS PREMIUM CLEAN
+========================= -->
 <section class="testimonials-premium">
   <div class="container">
-    <div class="section-header reveal">
+    <div class="section-header">
       <h2>What Our Clients Say</h2>
       <p>Real feedback from real entrepreneurs.</p>
     </div>
 
     <div class="testimonial-slider">
-
+      
+      <!-- TESTIMONIAL 1 -->
       <div class="testimonial-card active">
+        <div class="overlay"></div>
         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
         <div class="stars">★★★★★</div>
         <p>
@@ -261,7 +260,9 @@ document.querySelector(".subscribe-form").addEventListener("submit", function(e)
         <span>Business Owner</span>
       </div>
 
+      <!-- TESTIMONIAL 2 -->
       <div class="testimonial-card">
+        <div class="overlay"></div>
         <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
         <div class="stars">★★★★★</div>
         <p>
@@ -272,7 +273,9 @@ document.querySelector(".subscribe-form").addEventListener("submit", function(e)
         <span>Entrepreneur</span>
       </div>
 
+      <!-- TESTIMONIAL 3 -->
       <div class="testimonial-card">
+        <div class="overlay"></div>
         <img src="https://randomuser.me/api/portraits/men/56.jpg" alt="">
         <div class="stars">★★★★★</div>
         <p>
@@ -285,14 +288,15 @@ document.querySelector(".subscribe-form").addEventListener("submit", function(e)
 
     </div>
 
+    <!-- DOTS -->
     <div class="testimonial-dots">
-      <span class="t-dot active" data-slide="0"></span>
-      <span class="t-dot" data-slide="1"></span>
-      <span class="t-dot" data-slide="2"></span>
+      <span class="t-dot active"></span>
+      <span class="t-dot"></span>
+      <span class="t-dot"></span>
     </div>
-
   </div>
 </section>
+
 
 <!-- stat -->
 <section class="stats-section">
@@ -717,23 +721,6 @@ toggleBtn.addEventListener("click", () => {
 });
 </script>
 
-<!-- seo  replace domain-->
- <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Stavy-Tech",
-  "url": "https://yourdomain.com",
-  "logo": "https://yourdomain.com/logo.png",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+2348147599784",
-    "contactType": "customer service"
-  }
-}
-</script>
-
-
 <!-- <script>
 const waToggle = document.querySelector(".wa-toggle");
 const waChat = document.querySelector(".wa-chatbot");
@@ -805,7 +792,7 @@ if (localStorage.getItem("waChatOpen") === "true") {
 }
 </script> 
 
-<!-- <script>
+<! <script>
 const waToggle = document.querySelector(".wa-toggle");
 const waChat = document.querySelector(".wa-chatbot");
 const waClose = document.querySelector(".wa-close");
@@ -830,5 +817,211 @@ waButtons.forEach(btn => {
 </script> -->
 
 <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+  const navbar = document.getElementById("navbar");
+  const themeToggle = document.getElementById("themeToggle");
+
+  // Toggle mobile menu
+  menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+
+  // Sticky shadow on scroll
+  window.addEventListener("scroll", () => {
+    navbar.classList.toggle("scrolled", window.scrollY > 10);
+  });
+
+  // Active link highlight
+  const links = document.querySelectorAll("nav a");
+  links.forEach(link => {
+    if (link.href === window.location.href) {
+      link.classList.add("active");
+    }
+  });
+
+  // Page fade-in
+  window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+  });
+
+  // Dark mode toggle
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+      themeToggle.textContent = "☀️";
+    } else {
+      localStorage.setItem("theme", "light");
+      themeToggle.textContent = "🌙";
+    }
+  });
+
+  // Load saved theme
+  window.onload = () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark");
+      themeToggle.textContent = "☀️";
+    }
+  };
+</script>
+
+<!-- why choose us -->
+ <script>
+// Scroll reveal
+const whyCards = document.querySelectorAll('.why-card');
+
+function revealCards() {
+  const windowHeight = window.innerHeight;
+  const revealPoint = 150; // px before it appears
+
+  whyCards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+
+    if(cardTop < windowHeight - revealPoint){
+      card.classList.add('show');
+    }
+  });
+}
+
+// Run on scroll and on load
+window.addEventListener('scroll', revealCards);
+window.addEventListener('load', revealCards);
+</script>
+
+
+<script>
+const slider = document.querySelector('.testimonial-slider');
+const cards = document.querySelectorAll('.testimonial-card');
+const dotsContainer = document.querySelector('.testimonial-dots');
+const prevArrow = document.querySelector('.slider-arrow.prev');
+const nextArrow = document.querySelector('.slider-arrow.next');
+
+let totalCards = cards.length;
+let currentIndex = 0;
+let visibleCards = window.innerWidth >= 1200 ? 3 : window.innerWidth >= 900 ? 2 : 1;
+
+// CREATE DOTS
+for(let i=0;i<totalCards;i++){
+  let dot = document.createElement('span');
+  dot.classList.add('t-dot');
+  if(i===0) dot.classList.add('active');
+  dot.dataset.slide = i;
+  dotsContainer.appendChild(dot);
+}
+
+// UPDATE VISIBILITY
+function updateVisibleCards(){
+  visibleCards = window.innerWidth >= 1200 ? 3 : window.innerWidth >= 900 ? 2 : 1;
+  moveSlider();
+}
+window.addEventListener('resize', updateVisibleCards);
+
+// MOVE SLIDER WITH FADE + SLIDE
+function moveSlider(){
+  const offset = -(currentIndex * (100 / visibleCards));
+  slider.style.transform = `translateX(${offset}%)`;
+  cards.forEach((card,i)=>{
+    card.classList.remove('active');
+    if(i>=currentIndex && i<currentIndex+visibleCards){
+      card.classList.add('active');
+    }
+  });
+  updateDots();
+}
+
+// DOTS UPDATE
+function updateDots(){
+  const dots = document.querySelectorAll('.t-dot');
+  dots.forEach(dot=>dot.classList.remove('active'));
+  let activeDotIndex = currentIndex;
+  if(activeDotIndex >= dots.length) activeDotIndex = 0;
+  dots[activeDotIndex].classList.add('active');
+}
+
+// DOTS CLICK
+document.querySelectorAll('.t-dot').forEach((dot,index)=>{
+  dot.addEventListener('click',()=>{
+    currentIndex = index;
+    moveSlider();
+    resetInterval();
+  });
+});
+
+// ARROWS CLICK
+prevArrow.addEventListener('click', ()=>{
+  currentIndex--;
+  if(currentIndex < 0) currentIndex = totalCards - visibleCards;
+  moveSlider();
+  resetInterval();
+});
+nextArrow.addEventListener('click', ()=>{
+  currentIndex++;
+  if(currentIndex > totalCards - visibleCards) currentIndex = 0;
+  moveSlider();
+  resetInterval();
+});
+
+// AUTO SLIDE
+let slideInterval = setInterval(()=>{
+  currentIndex++;
+  if(currentIndex > totalCards - visibleCards) currentIndex = 0;
+  moveSlider();
+}, 6000);
+
+function resetInterval(){
+  clearInterval(slideInterval);
+  slideInterval = setInterval(()=>{
+    currentIndex++;
+    if(currentIndex > totalCards - visibleCards) currentIndex = 0;
+    moveSlider();
+  },6000);
+}
+
+// PAUSE ON HOVER
+slider.addEventListener('mouseenter', ()=>clearInterval(slideInterval));
+slider.addEventListener('mouseleave', resetInterval);
+
+// SWIPE SUPPORT
+let startX = 0;
+let isDragging = false;
+
+slider.addEventListener('touchstart', e=>{
+  startX = e.touches[0].clientX;
+  isDragging = true;
+  slider.style.transition = 'none';
+});
+
+slider.addEventListener('touchmove', e=>{
+  if(!isDragging) return;
+  const dx = e.touches[0].clientX - startX;
+  slider.style.transform = `translateX(calc(${-(currentIndex * (100 / visibleCards))}% + ${dx}px))`;
+});
+
+slider.addEventListener('touchend', e=>{
+  isDragging = false;
+  slider.style.transition = 'transform 0.8s ease';
+  const dx = e.changedTouches[0].clientX - startX;
+  if(dx > 50){
+    currentIndex--;
+    if(currentIndex < 0) currentIndex = totalCards - visibleCards;
+  } else if(dx < -50){
+    currentIndex++;
+    if(currentIndex > totalCards - visibleCards) currentIndex = 0;
+  }
+  moveSlider();
+  resetInterval();
+});
+
+// INITIALIZE
+updateVisibleCards();
+</script> 
+
+
 </body>
 </html>

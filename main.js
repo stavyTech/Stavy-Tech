@@ -1,43 +1,55 @@
 
-  const slides = document.querySelectorAll(".hero-slide");
-  const dots = document.querySelectorAll(".dot");
-  const heroSection = document.querySelector(".hero");
+const slides = document.querySelectorAll('.hero-slide');
+const dots = document.querySelectorAll('.dot');
+let currentSlide = 0;
+let slideInterval;
 
-  let currentSlide = 0;
-  let slideInterval;
-
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === index);
-      dots[i].classList.toggle("active", i === index);
-    });
-    currentSlide = index;
-  }
-
-  function startAutoSlide() {
-    slideInterval = setInterval(() => {
-      let nextSlide = (currentSlide + 1) % slides.length;
-      showSlide(nextSlide);
-    }, 6000);
-  }
-
-  function stopAutoSlide() {
-    clearInterval(slideInterval);
-  }
-
-  // Dot click control
-  dots.forEach(dot => {
-    dot.addEventListener("click", () => {
-      showSlide(Number(dot.dataset.slide));
-    });
+// Function to go to a slide
+function goToSlide(n) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active');
+    dots[i].classList.remove('active');
+    if(i === n) {
+      slide.classList.add('active');
+      dots[i].classList.add('active');
+    }
   });
+  currentSlide = n;
+}
 
-  // Pause on hover
-  heroSection.addEventListener("mouseenter", stopAutoSlide);
-  heroSection.addEventListener("mouseleave", startAutoSlide);
+// Next slide
+function nextSlide() {
+  let next = currentSlide + 1;
+  if(next >= slides.length) next = 0;
+  goToSlide(next);
+}
 
-  // Start carousel
-  startAutoSlide();
+// Auto slide
+function startSlide() {
+  slideInterval = setInterval(nextSlide, 5000);
+}
+
+// Stop slide
+function stopSlide() {
+  clearInterval(slideInterval);
+}
+
+// Dot click
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    goToSlide(index);
+    stopSlide();
+    startSlide();
+  });
+});
+
+// Pause on hover
+document.querySelector('.hero-carousel').addEventListener('mouseenter', stopSlide);
+document.querySelector('.hero-carousel').addEventListener('mouseleave', startSlide);
+
+// Init
+goToSlide(0);
+startSlide();
 
 
   // sticky navbar/////////////////////////
